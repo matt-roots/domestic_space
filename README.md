@@ -2,11 +2,11 @@
 
 This repository contains files pertaining to the lab domestic space project, principally relating to annotation done prior to July 2023, and to the development of regression models using those annotations. Several older approaches and methods are included as well. 
 
-Note that the actual annoation data is included here, which should be considered prior to taking the repo public.
+Note that the annotation data isn't included here; it should be added to the `annotations` directory for the code to be particularly useful.
 
 This is a static upload; I developed and ran this code locally, and it's very possible that something is missing here. 
 
- If you run any of this code yourself, you'll generate `.rds` files in a variety of places where that represents a considerable time saving for re-running the code; there are options in individual scripts to overwrite this behaviour if you need to regenerate these files. Note also that these files can be quite large (10+ gB) so you may want to either disable this behaviour or delete the files when done with the project.
+ If you run any of this code yourself, you'll generate `.rds` files in a variety of places where that represents a considerable time saving for re-running the code; there are options in individual scripts to overwrite this behaviour if you need to regenerate these files. Note also that these files can be quite large (10+ GB) so you may want to either disable this behaviour or delete the files when done with the project.
 
 ### `domestic_space.Rproj`
 

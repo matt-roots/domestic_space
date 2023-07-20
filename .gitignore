@@ -1,0 +1,6 @@
+# all rds files (many are huge)
+*.rds
+
+# rstudio and rproject stuff
+.Rproj.user
+.Rhistory

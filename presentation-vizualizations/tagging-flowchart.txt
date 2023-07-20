@@ -1,0 +1,85 @@
+# http://www.graphviz.org/content/cluster
+
+digraph G {
+  graph [fontname = "Handlee", splines =false, rankdir="LR"];
+  node [fontname = "Handlee", fontsize = "36pt"];
+  edge [fontname = "Handlee", fontsize = "24pt"];
+
+  bgcolor=transparent;
+
+subgraph domestic {
+      start -> inspace; 
+  inspace -> identifiable [label = "yes"]
+  identifiable -> multiple [label = "yes"]
+  multiple -> indoors [label = "no"]
+  multiple -> majority [label = "yes"]
+  majority -> indoors [label = "yes"]
+  indoors -> public [label = "yes"]
+  public -> living [label = "no"]
+}
+
+
+
+  living -> domestic[lablel = "no"]
+  inspace:s -> nondomestic1:n [label ="no"]
+  indoors:s -> nondomestic2:n [label = "no"]
+  public:s -> nondomestic3:n [label = "yes"]
+  living:s -> nondomestic4:n [label = "yes"]
+  
+  {rank = same;inspace;nondomestic1}
+  {rank = same;indoors;nondomestic2}
+  {rank = same;public,nondomestic3}
+  {rank = same;living;nondomestic4}
+
+
+  identifiable:s -> NA1 [label = "no"]
+  majority -> NA2 [label = "no"]
+  
+  {rank = same;identifiable;NA1}
+  {rank = same;majority;NA2}
+
+  start [shape=Mdiamond, label="Get new\npassage", 
+         fontsize = "48pt",
+         style=filled,
+         color=darkgreen];
+    inspace [label="In a space?"]
+    identifiable [label = "Can this space \nbe identified?"]
+    multiple[label = "Is this multiple \nspaces?"]
+    majority[label = "Does the passage\nhave a clear\nmajority space?"]
+    indoors[label = "Is this space\nindoors?"]
+    public[label = "Is this space\naccessible to the\ngeneral public?"]
+    living[label = "Is this a non-\ndomestic space \nwhere people live?"]
+  domestic [shape=rectagle, 
+            label = "Domestic\nspace",
+            fontsize = "48pt",
+            style = filled,
+            color = goldenrod]
+  nondomestic1 [shape=rectagle, 
+                label = "Not a domestic\nspace",
+                fontsize = "48pt",
+                style = filled,
+                color = lightblue]
+  nondomestic2 [shape=rectagle, 
+                label = "Not a domestic\nspace",
+                fontsize = "48pt",
+                style = filled,
+                color = lightblue]
+  nondomestic3 [shape=rectagle, 
+                label = "Not a domestic\nspace",
+                fontsize = "48pt",
+                style = filled,
+                color = lightblue]
+  nondomestic4 [shape=rectagle, 
+                label = "Not a domestic\nspace",
+                fontsize = "48pt",
+                style = filled,
+                color = lightblue]
+  NA1 [shape=Msquare, label = "NA",
+       style = filled,
+       fontsize = "54pt",
+       color = firebrick3]
+  NA2 [shape=Msquare, label = "NA",
+       fontsize = "54pt",
+       style = filled,
+       color = firebrick3]
+}
